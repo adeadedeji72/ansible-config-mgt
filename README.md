@@ -1,3 +1,3 @@
 # ansible-config-mgt
 
-This is s first test
+This is a first test
