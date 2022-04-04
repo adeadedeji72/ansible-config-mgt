@@ -29,8 +29,10 @@ pipeline {
       }
     }
     stage('Deploy') {
-      script {
+      steps {
+        script {
         sh 'echo "Deployment Stage"'
+        }
       }
     }
     stage('Clean Up') {
@@ -40,5 +42,3 @@ pipeline {
       }
     }
   }
-
-
