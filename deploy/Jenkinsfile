@@ -7,7 +7,7 @@ pipeline {
     stage('Initial Cleanup') {
       steps {
         dir("${WORKSPACE}") {
-          deleteDir()
+          deleteDirs()
         }
       }
     }
