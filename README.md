@@ -24,7 +24,7 @@ export CLASSPATH=.:$JAVA_HOME/jre/lib:$JAVA_HOME/lib:$JAVA_HOME/lib/tools.jar
 ##### reload the bash profile
 source ~/.bash_profile
 
-
+#####
 ##### Install  php
 =====================================
 - yum module reset php -y
