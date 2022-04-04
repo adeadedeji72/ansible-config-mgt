@@ -1,18 +1,18 @@
 pipeline {
   agent any
   environment {
-      ANSIBLE_CONFIG="${WORKSPACE}/deploy/ansible.cfg"
+      ANSIBLE_CONFIG = "${WORKSPACE}/deploy/ansible.cfg"
     }
   stages {
     stage('Initial Cleanup') {
       steps {
         dir("${WORKSPACE}") {
-          deleteDirs()
+          deleteDir()
         }
       }
     }
     stage('Checkout SCM') {
-      steps{
+      steps {
         git branch: 'feature/jenkinspipeline-spaces', url: 'https://github.com/adeadedeji72/ansible-config.git'
       }
     }
@@ -28,7 +28,7 @@ pipeline {
       }
     }
     stage('Clean Workspace after buil') {
-      steps{
+      steps {
         cleanWs(cleanWhenAborted: true, cleanWhenFailure: true, cleanWhenNotBuilt: true, cleanWhenUnstable: true, deleteDirs: true)
       }
     }
