@@ -15,7 +15,7 @@ pipeline {
     }
     stage('Checkout SCM') {
       steps {
-        git branch: 'feature/jenkinspipeline-spaces', url: 'https://github.com/adeadedeji72/ansible-config.git'
+        git branch: 'feature/jenkinspipeline-stages', url: 'https://github.com/adeadedeji72/ansible-config.git'
       }
     }
     stage('Prepare Ansible for Execusion') {
