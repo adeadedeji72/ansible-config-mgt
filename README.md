@@ -252,3 +252,49 @@ stage('Plot Code Coverage Report') {
 
 }
 }
+
+### Jenkinsfile for Testing
+pipeline {
+    agent any
+
+  stages {
+    stage('Initial Cleanup') {
+      steps {
+        dir("${WORKSPACE}") {
+          deleteDir()
+        }
+      }
+    }
+    stage('Build') {
+      steps {
+        script {
+          sh 'echo "Building Stage"'
+        }
+      }
+    }
+    stage('Test') {
+      steps {
+        script {
+          sh 'echo "Testing Stage"'
+        }
+      }
+    }
+    stage('Package') {
+      steps {
+        sh 'echo "Packaging Stage"'
+      }
+    }
+    stage('Deploy') {
+      steps {
+        script {
+        sh 'echo "Deployment Stage"'
+        }
+      }
+    }
+    stage('Clean Up') {
+      steps {
+        cleanWs()
+        }
+      }
+    }
+  }
